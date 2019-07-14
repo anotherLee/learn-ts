@@ -42,3 +42,18 @@ var ConsoleLog = /** @class */ (function () {
 var r = extend(new Person('xxx'), new ConsoleLog());
 console.log(r.name);
 r.log();
+function getAnimal(a) {
+    // if ((a as bird).fly) {
+    //     (a as bird).fly();
+    // }
+    // (a as fish).swim();
+    if (isFish(a)) {
+        a.swim();
+    }
+    else {
+        a.fly();
+    }
+}
+function isFish(animal) {
+    return animal.swim !== undefined;
+}

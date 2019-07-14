@@ -44,3 +44,28 @@ let r: Person & ConsoleLog = extend(new Person('xxx'), new ConsoleLog());
 console.log(r.name);
 r.log();
 
+// 交叉类型是几种类型之和；联合类型是几种类型之一
+// 借助类型保护，可以更方便
+interface bird{
+    fly(): void;
+    layEggs(): void;
+}
+interface fish{
+    swim(): void;
+    layEggs(): void;
+}
+function getAnimal(a: bird | fish) {
+    // if ((a as bird).fly) {
+    //     (a as bird).fly();
+    // }
+    // (a as fish).swim();
+    if (isFish(a)) {
+        a.swim();
+    } else {
+        a.fly();
+    }
+}
+function isFish(animal: bird | fish): animal is fish{
+    return (animal as fish).swim !== undefined;
+}
+
