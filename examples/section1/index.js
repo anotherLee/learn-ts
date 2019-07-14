@@ -12,3 +12,15 @@ var Color;
     Color[Color["BLUE"] = 4] = "BLUE";
     Color[Color["YELLOW"] = 5] = "YELLOW";
 })(Color || (Color = {}));
+// never类型，表示有异常
+function neverDemo() {
+    throw new Error();
+}
+function neverDemo2() {
+    while (true) {
+    }
+}
+// 类型断言
+var someValue = "this is a string";
+var len = someValue.length;
+var len1 = someValue;

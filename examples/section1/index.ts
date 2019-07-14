@@ -13,3 +13,18 @@ enum Color {
     BLUE = 4,
     YELLOW
 }
+
+// never类型，表示有异常
+function neverDemo(): never {
+    throw new Error();
+}
+function neverDemo2(): never {
+    while (true) {
+
+    }
+}
+
+// 类型断言
+let someValue: any = "this is a string";
+let len: number = (<string>someValue).length;
+let len1: number = someValue as number;
