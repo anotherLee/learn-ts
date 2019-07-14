@@ -5,3 +5,10 @@ var list2 = ["abc", "12"];
 var x;
 x = ["a", 2, "b"];
 console.log(x.length);
+// 枚举类型
+var Color;
+(function (Color) {
+    Color[Color["RED"] = 2] = "RED";
+    Color[Color["BLUE"] = 4] = "BLUE";
+    Color[Color["YELLOW"] = 5] = "YELLOW";
+})(Color || (Color = {}));

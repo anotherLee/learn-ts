@@ -6,3 +6,10 @@ let list2: Array<string> = ["abc", "12"];
 let x: [string, number, string];
 x = ["a", 2, "b"]
 console.log(x.length)
+
+// 枚举类型
+enum Color {
+    RED = 2,
+    BLUE = 4,
+    YELLOW
+}
