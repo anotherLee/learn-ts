@@ -65,3 +65,17 @@ let s: searchFunc = function(souceStr: string, res: string) {
     let result = souceStr.search(res);
     return result > -1;
 }
+
+// 混合类型
+interface Counter {
+    start (start: number): string;
+    interval: number;
+    reset(): void;
+}
+function getCounter(): Counter {
+    let counter: Counter = {} as Counter;
+    counter.start = function() { return '' }
+    counter.interval = 1
+    counter.reset = function() {}
+    return counter;
+}

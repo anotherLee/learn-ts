@@ -24,3 +24,9 @@ var s = function (souceStr, res) {
     var result = souceStr.search(res);
     return result > -1;
 };
+function getCounter() {
+    var counter = (function (start) { });
+    counter.interval = 1;
+    counter.reset = function () { };
+    return counter;
+}
