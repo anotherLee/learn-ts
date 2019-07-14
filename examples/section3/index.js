@@ -15,4 +15,12 @@ function createSquare(config) {
 var mySquare = createSquare({ color: 'black' });
 console.log(mySquare);
 var p = { x: 1, y: 2 };
-// p.x = 12; 报错
+var e = {
+    x: 1,
+    y: 1,
+    other: "abc"
+};
+var s = function (souceStr, res) {
+    var result = souceStr.search(res);
+    return result > -1;
+};

@@ -42,3 +42,26 @@ interface Point {
 
 let p: Point = {x: 1, y: 2}
 // p.x = 12; 报错
+
+//额外属性
+interface Extra {
+    x: number;
+    y: number;
+
+    [propName: string]: any;
+}
+
+let e: Extra = {
+    x: 1,
+    y: 1,
+    other: "abc"
+}
+
+// 函数类型
+interface searchFunc {
+    (sourceStr: string, res: string): boolean;
+}
+let s: searchFunc = function(souceStr: string, res: string) {
+    let result = souceStr.search(res);
+    return result > -1;
+}
