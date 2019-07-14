@@ -68,13 +68,12 @@ let s: searchFunc = function(souceStr: string, res: string) {
 
 // 混合类型
 interface Counter {
-    start (start: number): string;
+    (start: number): string;
     interval: number;
     reset(): void;
 }
 function getCounter(): Counter {
-    let counter: Counter = {} as Counter;
-    counter.start = function() { return '' }
+    let counter: Counter = (function(start: number) {}) as Counter
     counter.interval = 1
     counter.reset = function() {}
     return counter;
