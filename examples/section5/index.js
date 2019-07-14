@@ -36,3 +36,14 @@ function buildName3(firstName) {
     });
     return str;
 }
+// this, 在typescript中，this的类型可以手动指定，如果是void，用的就是默认的
+function fn() {
+    console.log(this);
+}
+fn();
+function pick(x) {
+    if (x) {
+        return x;
+    }
+    return x;
+}

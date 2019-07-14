@@ -20,10 +20,13 @@ let res1: func = (x: number, y: number): number => {
 function buildName(firstName: string, lastName: string = "Smith"): string {
     return firstName + lastName;
 }
+
 buildName("Bob");
+
 function buildName2(firstName: string = 'Bob', lastName: string): string {
     return firstName + lastName;
 }
+
 buildName2(undefined, "Smith");
 
 /*
@@ -32,8 +35,28 @@ buildName2(undefined, "Smith");
 function buildName3(firstName: string, ...rest: string[]): string {
     let str: string = "";
     str += firstName;
-    rest.forEach((item:string): void => {
+    rest.forEach((item: string): void => {
         str += item;
     });
     return str;
 }
+
+// this, 在typescript中，this的类型可以手动指定，如果是void，用的就是默认的
+function fn(this: void): void {
+    console.log(this)
+}
+
+fn();
+
+// 函数重载
+function pick(x: number): number;
+function pick(x: string): string;
+function pick(x: number | string): number | string {
+    if (x as number) {
+        return x;
+    }
+    return x;
+}
+
+
+
